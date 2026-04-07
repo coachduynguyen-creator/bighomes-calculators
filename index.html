@@ -8,30 +8,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#ecf0ec;color:#1a2535;min-height:100vh;font-size:14px}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#ecf0ec;color:#1a2535;min-height:100vh;font-size:14px;overflow-x:hidden}
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
 input[type=number]{-moz-appearance:textfield}
 
 header{background:#1a2e1a;border-bottom:3px solid #3d8b3d;padding:16px 20px}
 .hdr-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.h-brand{display:flex;align-items:center;gap:12px}
+.h-brand{display:flex;align-items:center;gap:12px;min-width:0}
 .h-logo{width:38px;height:38px;border-radius:7px;background:#3d8b3d;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;letter-spacing:.04em}
+.h-title{min-width:0}
 .h-title h1{font-size:14px;font-weight:700;color:#7ec87e;letter-spacing:.05em;text-transform:uppercase}
 .h-title p{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px}
-.h-kh-block{text-align:right}
-.h-kh-name{font-size:17px;font-weight:700;color:#ffffff;line-height:1.2}
-.h-kh-can{font-size:12px;color:rgba(255,255,255,.45);margin-top:3px}
-.print-btn{background:rgba(255,255,255,.08);border:0.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:7px 16px;border-radius:7px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap;flex-shrink:0}
+.h-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.h-kh-block{text-align:right;min-width:0}
+.h-kh-name{font-size:16px;font-weight:700;color:#ffffff;line-height:1.2}
+.h-kh-can{font-size:12px;color:rgba(255,255,255,.65);margin-top:3px}
+.print-btn{background:rgba(255,255,255,.08);border:0.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:7px 14px;border-radius:7px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap;flex-shrink:0}
 .print-btn:hover{background:rgba(255,255,255,.16);color:#fff}
+@media(max-width:520px){
+  .hdr-inner{flex-direction:column;align-items:flex-start;gap:10px}
+  .h-right{width:100%;justify-content:space-between}
+  .h-kh-block{text-align:left}
+}
 
 main{max-width:1120px;margin:0 auto;padding:20px 16px}
 section{margin-bottom:22px}
 .sec-title{font-size:10px;font-weight:700;color:#1a2e1a;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;padding-bottom:5px;border-bottom:1.5px solid #3d8b3d;display:inline-block}
 
-.input-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.input-grid{display:grid;grid-template-columns:1fr;gap:10px}
 @media(min-width:640px){.input-grid{grid-template-columns:1fr 1fr 1fr}}
-@media(min-width:900px){.input-grid{grid-template-columns:1fr 1fr 1fr 1fr 1fr}}
+@media(min-width:900px){.input-grid{grid-template-columns:1fr 1fr 1.2fr 1.2fr 1fr}}
 .icard{background:#fff;border:0.5px solid #d4dbd4;border-radius:10px;padding:12px 14px}
 .icard label{display:block;font-size:10px;font-weight:700;color:#7a9a7a;text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px}
 .icard input[type=text]{width:100%;border:none;outline:none;font-size:15px;font-weight:600;color:#1a2535;font-family:inherit;background:transparent}
@@ -65,10 +72,10 @@ section{margin-bottom:22px}
 .overlap-alert{background:#fff8ec;border:0.5px solid #e8c07a;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12px;color:#7a5010;line-height:1.5}
 .ok-note{background:#f0f8f0;border:0.5px solid #a8d4a8;border-radius:6px;padding:8px 11px;margin-top:8px;font-size:12px;color:#2a5e2a;line-height:1.4}
 
-.tl-card{background:#fff;border:0.5px solid #d4dbd4;border-radius:12px;padding:16px 20px}
+.tl-card{background:#fff;border:0.5px solid #d4dbd4;border-radius:12px;padding:16px 20px;overflow:hidden}
 .tl-legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px;font-size:12px;color:#6b7c6b}
 .ls{width:12px;height:12px;border-radius:2px;flex-shrink:0}
-.tl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:4px}
+.tl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -4px;padding:0 4px}
 .tl-scroll::-webkit-scrollbar{height:4px}
 .tl-scroll::-webkit-scrollbar-track{background:#f0f4f0;border-radius:2px}
 .tl-scroll::-webkit-scrollbar-thumb{background:#a8c4a8;border-radius:2px}
@@ -125,7 +132,7 @@ footer{text-align:center;padding:18px 16px;font-size:11px;color:#8a9a8a;border-t
         <p>Vinhomes Hạ Long Xanh · Chính sách giãn tiền đất · Bighomes 15</p>
       </div>
     </div>
-    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+    <div class="h-right">
       <div class="h-kh-block">
         <div class="h-kh-name" id="hdr-kh">Nhập tên khách hàng</div>
         <div class="h-kh-can" id="hdr-can">Mã căn: —</div>
@@ -165,7 +172,7 @@ footer{text-align:center;padding:18px 16px;font-size:11px;color:#8a9a8a;border-t
         <div class="ihint">Không gồm tiền đất</div>
       </div>
       <div class="icard">
-        <label>Số tháng trả tiền xây</label>
+        <label>Số tháng trả xây</label>
         <div class="iu-row">
           <input type="number" id="i-bm" value="6" min="1" max="24" step="1" oninput="go()">
           <span class="iunit">tháng</span>
