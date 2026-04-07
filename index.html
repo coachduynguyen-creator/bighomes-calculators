@@ -5,133 +5,138 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tính Tiến Độ Thanh Toán — Vinhomes Hạ Long Xanh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#edeae3;color:#1a2535;min-height:100vh;font-size:14px}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#ecf0ec;color:#1a2535;min-height:100vh;font-size:14px}
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
 input[type=number]{-moz-appearance:textfield}
 
-/* HEADER */
-header{background:#1b3a5c;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #c4a44e}
-.h-left h1{font-size:15px;font-weight:700;color:#c4a44e;letter-spacing:0.06em;text-transform:uppercase}
-.h-left p{font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px}
-.h-right{text-align:right}
-.h-right .kh{font-size:13px;color:rgba(255,255,255,0.85);font-weight:600}
-.h-right .can{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px}
-.print-btn{background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;transition:all 0.2s}
-.print-btn:hover{background:rgba(255,255,255,0.15);color:#fff}
+header{background:#1a2e1a;border-bottom:3px solid #3d8b3d;padding:16px 20px}
+.hdr-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.h-brand{display:flex;align-items:center;gap:12px}
+.h-logo{width:38px;height:38px;border-radius:7px;background:#3d8b3d;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;letter-spacing:.04em}
+.h-title h1{font-size:14px;font-weight:700;color:#7ec87e;letter-spacing:.05em;text-transform:uppercase}
+.h-title p{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px}
+.h-kh-block{text-align:right}
+.h-kh-name{font-size:17px;font-weight:700;color:#ffffff;line-height:1.2}
+.h-kh-can{font-size:12px;color:rgba(255,255,255,.45);margin-top:3px}
+.print-btn{background:rgba(255,255,255,.08);border:0.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:7px 16px;border-radius:7px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap;flex-shrink:0}
+.print-btn:hover{background:rgba(255,255,255,.16);color:#fff}
 
-/* MAIN */
-main{max-width:1120px;margin:0 auto;padding:24px 20px}
-section{margin-bottom:24px}
-.sec-title{font-size:10px;font-weight:700;color:#1b3a5c;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;padding-bottom:6px;border-bottom:1.5px solid #c4a44e;display:inline-block}
+main{max-width:1120px;margin:0 auto;padding:20px 16px}
+section{margin-bottom:22px}
+.sec-title{font-size:10px;font-weight:700;color:#1a2e1a;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;padding-bottom:5px;border-bottom:1.5px solid #3d8b3d;display:inline-block}
 
-/* INPUTS */
-.input-grid{display:grid;grid-template-columns:1fr 1fr repeat(3, 1fr);gap:10px}
-@media(max-width:768px){.input-grid{grid-template-columns:1fr 1fr}}
-.icard{background:#fff;border:0.5px solid #ddd7cc;border-radius:10px;padding:13px 15px}
-.icard label{display:block;font-size:10px;font-weight:700;color:#8a9bb0;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:7px}
-.icard input[type=text]{width:100%;border:none;outline:none;font-size:16px;font-weight:600;color:#1a2535;font-family:inherit;background:transparent}
-.icard input[type=text]::placeholder{color:#c8d0da;font-weight:400}
-.input-unit-row{display:flex;align-items:baseline;gap:5px}
-.input-unit-row input[type=number]{flex:1;min-width:0;border:none;outline:none;font-size:22px;font-weight:700;color:#1a2535;font-family:inherit;background:transparent;width:100%}
-.iunit{font-size:12px;color:#a0aabc;font-weight:500;flex-shrink:0}
-.ihint{font-size:10px;color:#b8c0cc;margin-top:5px;line-height:1.4}
+.input-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:640px){.input-grid{grid-template-columns:1fr 1fr 1fr}}
+@media(min-width:900px){.input-grid{grid-template-columns:1fr 1fr 1fr 1fr 1fr}}
+.icard{background:#fff;border:0.5px solid #d4dbd4;border-radius:10px;padding:12px 14px}
+.icard label{display:block;font-size:10px;font-weight:700;color:#7a9a7a;text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px}
+.icard input[type=text]{width:100%;border:none;outline:none;font-size:15px;font-weight:600;color:#1a2535;font-family:inherit;background:transparent}
+.icard input[type=text]::placeholder{color:#c0ccc0;font-weight:400}
+.iu-row{display:flex;align-items:baseline;gap:4px}
+.iu-row input[type=number]{flex:1;min-width:0;border:none;outline:none;font-size:22px;font-weight:700;color:#1a2535;font-family:inherit;background:transparent}
+.iunit{font-size:12px;color:#9ab09a;font-weight:500;flex-shrink:0}
+.ihint{font-size:10px;color:#b0bdb0;margin-top:5px;line-height:1.4}
 
-/* PLAN CARDS */
-.plan-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:600px){.plan-row{grid-template-columns:1fr}}
-.pcard{background:#fff;border:0.5px solid #ddd7cc;border-radius:12px;padding:18px 20px;position:relative;overflow:hidden}
+.plan-row{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:600px){.plan-row{grid-template-columns:1fr 1fr}}
+.pcard{background:#fff;border:0.5px solid #d4dbd4;border-radius:12px;padding:16px 18px;position:relative;overflow:hidden}
 .pcard::after{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.pcard.pa-a::after{background:linear-gradient(90deg,#e8a030,#f0b840)}
-.pcard.pa-b::after{background:linear-gradient(90deg,#d45a2a,#e07040)}
-.ptag{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#a0aabc;margin-bottom:3px}
-.pname{font-size:20px;font-weight:700;color:#1a2535;margin-bottom:2px}
-.pprem{font-size:13px;font-weight:600;margin-bottom:14px}
-.pa-a .pprem{color:#9a6010}
-.pa-b .pprem{color:#b03818}
+.pcard.pa-a::after{background:linear-gradient(90deg,#3d8b3d,#5aad5a)}
+.pcard.pa-b::after{background:linear-gradient(90deg,#c47a1a,#d49020)}
+.ptag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ab09a;margin-bottom:2px}
+.pname{font-size:18px;font-weight:700;color:#1a2535;margin-bottom:2px}
+.pprem{font-size:13px;font-weight:600;margin-bottom:12px}
+.pa-a .pprem{color:#2a6e2a}
+.pa-b .pprem{color:#9a6010}
 .mets{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.met{background:#f6f3ef;border-radius:8px;padding:10px 11px}
-.met .ml{font-size:9px;font-weight:700;color:#8a9bb0;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px}
+.met{background:#f4f7f4;border-radius:8px;padding:10px 11px}
+.met .ml{font-size:9px;font-weight:700;color:#7a9a7a;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
 .met .mv{font-size:15px;font-weight:700;color:#1a2535;line-height:1.2}
-.met .mv.warn{color:#b03818}
-.met .mv.good{color:#1a6040}
-.met .ms{font-size:10px;color:#a0aabc;margin-top:2px}
-.ptotal{margin-top:14px;padding-top:12px;border-top:0.5px solid #e8e2d9;display:flex;justify-content:space-between;align-items:baseline}
-.ptotal .tl{font-size:11px;font-weight:600;color:#8a9bb0}
+.met .mv.warn{color:#9a5c10}
+.met .mv.good{color:#1a6e2a}
+.met .ms{font-size:10px;color:#9ab09a;margin-top:2px}
+.ptotal{margin-top:12px;padding-top:10px;border-top:0.5px solid #dde8dd;display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.ptotal .tl{font-size:11px;font-weight:600;color:#7a9a7a}
 .ptotal .tv{font-size:20px;font-weight:700;color:#1a2535}
-.overlap-alert{background:#fff3ee;border:0.5px solid #f0a88a;border-radius:8px;padding:10px 12px;margin-top:12px;font-size:12px;color:#8a2c10;line-height:1.5}
-.overlap-alert strong{font-weight:700}
-.diff-note{background:#fffbf0;border:0.5px solid #e8c060;border-radius:6px;padding:7px 10px;margin-top:8px;font-size:11px;color:#7a5500;font-weight:500}
+.overlap-alert{background:#fff8ec;border:0.5px solid #e8c07a;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12px;color:#7a5010;line-height:1.5}
+.ok-note{background:#f0f8f0;border:0.5px solid #a8d4a8;border-radius:6px;padding:8px 11px;margin-top:8px;font-size:12px;color:#2a5e2a;line-height:1.4}
 
-/* TIMELINE */
-.tl-wrap{background:#fff;border:0.5px solid #ddd7cc;border-radius:12px;padding:20px 22px}
-#tl-svg{width:100%;display:block}
+.tl-card{background:#fff;border:0.5px solid #d4dbd4;border-radius:12px;padding:16px 20px}
+.tl-legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px;font-size:12px;color:#6b7c6b}
+.ls{width:12px;height:12px;border-radius:2px;flex-shrink:0}
+.tl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:4px}
+.tl-scroll::-webkit-scrollbar{height:4px}
+.tl-scroll::-webkit-scrollbar-track{background:#f0f4f0;border-radius:2px}
+.tl-scroll::-webkit-scrollbar-thumb{background:#a8c4a8;border-radius:2px}
+.tl-hint{font-size:10px;color:#9ab09a;margin-top:8px;text-align:center}
 
-/* TABLE */
-.tbl-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.toggle-btn{background:none;border:0.5px solid #ddd7cc;border-radius:6px;padding:5px 12px;font-size:12px;font-family:inherit;color:#6b7c8e;cursor:pointer;transition:all 0.15s}
-.toggle-btn:hover{background:#f4f1eb;color:#1a2535}
-.tbl-wrap{background:#fff;border:0.5px solid #ddd7cc;border-radius:12px;overflow:hidden}
-table{width:100%;border-collapse:collapse;font-size:12px}
-thead tr{background:#1b3a5c}
-thead th{padding:10px 12px;text-align:right;font-size:9px;font-weight:700;color:rgba(255,255,255,0.75);text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap}
+.tbl-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+.toggle-btn{background:none;border:0.5px solid #d4dbd4;border-radius:6px;padding:5px 12px;font-size:12px;font-family:inherit;color:#5a7a5a;cursor:pointer}
+.toggle-btn:hover{background:#f0f4f0}
+.tbl-card{background:#fff;border:0.5px solid #d4dbd4;border-radius:12px;overflow:hidden}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:560px}
+thead tr{background:#1a2e1a}
+thead th{padding:10px 11px;text-align:right;font-size:9px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
 thead th:first-child,thead th:nth-child(2){text-align:left}
-tbody tr{border-bottom:0.5px solid #f0ece4;transition:background 0.1s}
-tbody tr:hover{background:#faf8f4}
-tbody td{padding:8px 12px;text-align:right;font-variant-numeric:tabular-nums}
+tbody tr{border-bottom:0.5px solid #edf2ed}
+tbody tr:hover{background:#f6faf6}
+tbody td{padding:8px 11px;text-align:right;font-variant-numeric:tabular-nums}
 tbody td:first-child,tbody td:nth-child(2){text-align:left}
-.tr-key{background:#eaf1f8!important;font-weight:600}
-.tr-handover{background:#eaf5ea!important;font-weight:600}
-.tr-overlap{background:#fff4f0!important}
-td.land-val{color:#9a6010;font-weight:600}
-td.build-val{color:#154e8a;font-weight:600}
-td.both-val{color:#b03818;font-weight:700}
-td.zero-val{color:#ccc}
+.tr-key{background:#e8f4e8!important;font-weight:600}
+.tr-handover{background:#d4eed4!important;font-weight:700}
+.tr-overlap{background:#fffaec!important}
+td.land-v{color:#2a6e2a;font-weight:600}
+td.build-v{color:#154e8a;font-weight:600}
+td.both-v{color:#8a5010;font-weight:700}
+td.zero-v{color:#ccc}
 
-/* NOTES */
-.notes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
-.ncard{background:#fff;border:0.5px solid #ddd7cc;border-radius:10px;padding:12px 14px}
-.ncard.warn{border-color:#e8a88a;background:#fff5f1}
-.ntitle{font-size:10px;font-weight:700;color:#1b3a5c;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:5px}
-.ncard.warn .ntitle{color:#8a2c10}
-.ncard p{font-size:12px;color:#6b7c8e;line-height:1.55}
-.ncard.warn p{color:#8a2c10}
+.notes-grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:500px){.notes-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.notes-grid{grid-template-columns:repeat(4,1fr)}}
+.ncard{background:#fff;border:0.5px solid #d4dbd4;border-radius:10px;padding:12px 14px}
+.ncard.warn{border-color:#e8c07a;background:#fffbf0}
+.ntitle{font-size:10px;font-weight:700;color:#1a2e1a;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.ncard.warn .ntitle{color:#7a5010}
+.ncard p{font-size:12px;color:#6b7c6b;line-height:1.55}
+.ncard.warn p{color:#7a5010}
 
-/* FOOTER */
-footer{text-align:center;padding:20px;font-size:11px;color:#a0aabc;border-top:0.5px solid #ddd7cc;margin-top:8px}
+footer{text-align:center;padding:18px 16px;font-size:11px;color:#8a9a8a;border-top:0.5px solid #d4dbd4}
 
 @media print{
   body{background:#fff}
-  header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .pcard::after{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  header,thead tr,.pcard::after{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .no-print{display:none!important}
-  .tbl-wrap{border:0.5px solid #ddd}
-  thead tr{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="h-left">
-    <h1>Công Cụ Tính Tiến Độ Thanh Toán</h1>
-    <p>Vinhomes Hạ Long Xanh · Chính sách giãn tiền đất · F1 Bighomes 15</p>
-  </div>
-  <div style="display:flex;align-items:center;gap:16px;">
-    <div class="h-right">
-      <div class="kh" id="hdr-kh">Khách hàng: —</div>
-      <div class="can" id="hdr-can">Mã căn: —</div>
+  <div class="hdr-inner">
+    <div class="h-brand">
+      <div class="h-logo">BH</div>
+      <div class="h-title">
+        <h1>Tiến Độ Thanh Toán</h1>
+        <p>Vinhomes Hạ Long Xanh · Chính sách giãn tiền đất · Bighomes 15</p>
+      </div>
     </div>
-    <button class="print-btn no-print" onclick="window.print()">In / Lưu PDF</button>
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+      <div class="h-kh-block">
+        <div class="h-kh-name" id="hdr-kh">Nhập tên khách hàng</div>
+        <div class="h-kh-can" id="hdr-can">Mã căn: —</div>
+      </div>
+      <button class="print-btn no-print" onclick="window.print()">In / PDF</button>
+    </div>
   </div>
 </header>
 
 <main>
 
-  <!-- INPUTS -->
   <section>
     <div class="sec-title">Thông tin căn hộ</div>
     <div class="input-grid">
@@ -140,37 +145,36 @@ footer{text-align:center;padding:20px;font-size:11px;color:#a0aabc;border-top:0.
         <input type="text" id="i-kh" placeholder="Nguyễn Văn A" oninput="go()">
       </div>
       <div class="icard">
-        <label>Mã căn / Tên căn hộ</label>
+        <label>Mã căn</label>
         <input type="text" id="i-can" placeholder="S1.01.08" oninput="go()">
       </div>
       <div class="icard">
         <label>Giá trị tiền đất</label>
-        <div class="input-unit-row">
+        <div class="iu-row">
           <input type="number" id="i-land" value="3" min="0.1" step="0.1" oninput="go()">
-          <span class="iunit">tỷ VND</span>
+          <span class="iunit">tỷ</span>
         </div>
-        <div class="ihint">Giá đất trước phụ thu giãn</div>
+        <div class="ihint">Trước phụ thu giãn</div>
       </div>
       <div class="icard">
-        <label>Giá trị tiền xây dựng</label>
-        <div class="input-unit-row">
+        <label>Giá trị tiền xây</label>
+        <div class="iu-row">
           <input type="number" id="i-build" value="2" min="0" step="0.1" oninput="go()">
-          <span class="iunit">tỷ VND</span>
+          <span class="iunit">tỷ</span>
         </div>
-        <div class="ihint">Phần xây, không gồm tiền đất</div>
+        <div class="ihint">Không gồm tiền đất</div>
       </div>
       <div class="icard">
         <label>Số tháng trả tiền xây</label>
-        <div class="input-unit-row">
+        <div class="iu-row">
           <input type="number" id="i-bm" value="6" min="1" max="24" step="1" oninput="go()">
           <span class="iunit">tháng</span>
         </div>
-        <div class="ihint">Từ T25 đến T(24+n). Mặc định 6 tháng (T25–T30)</div>
+        <div class="ihint">Từ T25 (mặc định 6)</div>
       </div>
     </div>
   </section>
 
-  <!-- PLAN CARDS -->
   <section>
     <div class="sec-title">So sánh hai phương án</div>
     <div class="plan-row">
@@ -179,26 +183,33 @@ footer{text-align:center;padding:20px;font-size:11px;color:#a0aabc;border-top:0.
     </div>
   </section>
 
-  <!-- TIMELINE -->
   <section>
     <div class="sec-title">Tiến độ thanh toán theo thời gian</div>
-    <div class="tl-wrap">
-      <svg id="tl-svg" viewBox="0 0 900 200" style="width:100%;display:block;"></svg>
+    <div class="tl-card">
+      <div class="tl-legend">
+        <span style="display:flex;align-items:center;gap:5px"><span class="ls" style="background:#d4edd4;border:1px solid #3d8b3d"></span>Tiền đất (bình thường)</span>
+        <span style="display:flex;align-items:center;gap:5px"><span class="ls" style="background:#ddeeff;border:1px solid #4a90d9"></span>Tiền xây dựng</span>
+        <span style="display:flex;align-items:center;gap:5px"><span class="ls" style="background:#fff3d4;border:1px solid #d4a030"></span>Tiền đất T24–T36 (PA-B)</span>
+      </div>
+      <div class="tl-scroll">
+        <svg id="tl-svg" style="display:block;height:auto;"></svg>
+      </div>
+      <p class="tl-hint no-print">← Vuốt ngang nếu biểu đồ bị cắt trên màn hình nhỏ</p>
     </div>
   </section>
 
-  <!-- TABLE -->
   <section>
-    <div class="tbl-header">
-      <div class="sec-title" style="margin-bottom:0;border:none;padding:0">Chi tiết dòng tiền từng tháng</div>
+    <div class="tbl-hdr">
+      <div class="sec-title" style="margin-bottom:0;border:none;padding:0">Dòng tiền từng tháng</div>
       <button class="toggle-btn no-print" id="tgl-btn" onclick="toggleTbl()">Thu gọn ▲</button>
     </div>
-    <div class="tbl-wrap" id="tbl-wrap">
-      <table id="cf-table"></table>
+    <div class="tbl-card" id="tbl-wrap">
+      <div class="tbl-scroll">
+        <table id="cf-table"></table>
+      </div>
     </div>
   </section>
 
-  <!-- NOTES -->
   <section>
     <div class="sec-title">Lưu ý quan trọng</div>
     <div class="notes-grid" id="notes"></div>
@@ -206,326 +217,203 @@ footer{text-align:center;padding:20px;font-size:11px;color:#a0aabc;border-top:0.
 
 </main>
 
-<footer>Bighomes 15 · Vinhomes Hạ Long Xanh · Công cụ nội bộ — không phải tài liệu pháp lý</footer>
+<footer>Bighomes 15 · Vinhomes Hạ Long Xanh · Tài liệu nội bộ — không phải văn bản pháp lý</footer>
 
 <script>
-let tblVisible = true;
+let tblVisible=true;
 function toggleTbl(){
   tblVisible=!tblVisible;
   document.getElementById('tbl-wrap').style.display=tblVisible?'':'none';
   document.getElementById('tgl-btn').textContent=tblVisible?'Thu gọn ▲':'Xem chi tiết ▼';
 }
+function fb(v){return(Math.round(v*100)/100).toFixed(2)+' tỷ'}
+function fm(v){if(v<=0)return'—';return Math.round(v*1000).toLocaleString('vi-VN')+' tr'}
+function fmb(v){return Math.round(v*1000).toLocaleString('vi-VN')+' triệu'}
 
-// ── FORMAT ────────────────────────────────────────────
-function fb(v){return (Math.round(v*100)/100).toFixed(2)+' tỷ'}
-function fm(v){
-  if(v<=0) return '—';
-  const m=Math.round(v*1000);
-  return m.toLocaleString('vi-VN')+' tr';
-}
-function fmb(v){
-  const m=Math.round(v*1000);
-  return m.toLocaleString('vi-VN')+' triệu';
-}
-
-// ── INPUTS ────────────────────────────────────────────
-function inp(){
-  return {
-    kh: document.getElementById('i-kh').value.trim()||'—',
-    can: document.getElementById('i-can').value.trim()||'—',
-    land: Math.max(0, parseFloat(document.getElementById('i-land').value)||0),
-    build: Math.max(0, parseFloat(document.getElementById('i-build').value)||0),
-    bm: Math.max(1, parseInt(document.getElementById('i-bm').value)||6),
+function getInp(){
+  return{
+    kh:document.getElementById('i-kh').value.trim()||'',
+    can:document.getElementById('i-can').value.trim()||'',
+    land:Math.max(0,parseFloat(document.getElementById('i-land').value)||0),
+    build:Math.max(0,parseFloat(document.getElementById('i-build').value)||0),
+    bm:Math.max(1,parseInt(document.getElementById('i-bm').value)||6),
   };
 }
 
-// ── CALCULATE ─────────────────────────────────────────
 function calc(p){
-  const {land, build, bm} = p;
-  const pA = land*0.10, pB = land*0.15;
-  const tlA = land+pA, tlB = land+pB;
-  const mlA = tlA/24, mlB = tlB/36;
-  const mbuild = bm>0 ? build/bm : 0;
-  const buildEnd = 24+bm;
-  const maxM = Math.max(36, buildEnd)+2;
-
-  const sA=[], sB=[];
+  const{land,build,bm}=p;
+  const pA=land*.1,pB=land*.15;
+  const tlA=land+pA,tlB=land+pB;
+  const mlA=tlA/24,mlB=tlB/36;
+  const mb=bm>0?build/bm:0;
+  const bEnd=24+bm;
+  const maxM=Math.max(36,bEnd)+2;
+  const sA=[],sB=[];
   for(let m=1;m<=maxM;m++){
-    const lA = m<=24 ? mlA : 0;
-    const bA = m>24 && m<=buildEnd ? mbuild : 0;
-    sA.push({m, land:lA, build:bA, total:lA+bA});
-    const lB = m<=36 ? mlB : 0;
-    const bB = m>24 && m<=buildEnd ? mbuild : 0;
-    sB.push({m, land:lB, build:bB, total:lB+bB});
+    const lA=m<=24?mlA:0,bA=m>24&&m<=bEnd?mb:0;
+    sA.push({m,land:lA,build:bA,total:lA+bA});
+    const lB=m<=36?mlB:0,bB=m>24&&m<=bEnd?mb:0;
+    sB.push({m,land:lB,build:bB,total:lB+bB});
   }
-
-  const peakA = Math.max(...sA.map(r=>r.total));
-  const peakB = Math.max(...sB.map(r=>r.total));
-  const overlapEnd = Math.min(36, buildEnd);
-  const hasOverlap = overlapEnd >= 25;
-
-  return {
-    pA, pB, tlA, tlB, mlA, mlB, mbuild, bm,
-    buildEnd, maxM, sA, sB, peakA, peakB,
-    hasOverlap, overlapEnd,
-    totalA: tlA+build, totalB: tlB+build,
-    diff: pB-pA,
-  };
+  const peakA=Math.max(...sA.map(r=>r.total));
+  const peakB=Math.max(...sB.map(r=>r.total));
+  const ovEnd=Math.min(36,bEnd);
+  return{pA,pB,tlA,tlB,mlA,mlB,mb,bm,bEnd,maxM,sA,sB,peakA,peakB,ovEnd,
+    hasOv:ovEnd>=25,totalA:tlA+build,totalB:tlB+build};
 }
 
-// ── RENDER HEADER ─────────────────────────────────────
 function rHeader(p){
-  document.getElementById('hdr-kh').textContent='Khách hàng: '+p.kh;
-  document.getElementById('hdr-can').textContent='Mã căn: '+p.can;
+  document.getElementById('hdr-kh').textContent=p.kh||'Nhập tên khách hàng';
+  document.getElementById('hdr-can').textContent='Mã căn: '+(p.can||'—');
 }
 
-// ── RENDER CARDS ─────────────────────────────────────
-function rCards(p, d){
+function rCards(p,d){
   document.getElementById('card-a').innerHTML=`
     <div class="ptag">Phương án A</div>
     <div class="pname">Giãn 24 tháng</div>
-    <div class="pprem">Phụ thu +10% tiền đất &rarr; ${fb(d.pA)}</div>
+    <div class="pprem">Phụ thu +10% &rarr; ${fb(d.pA)}</div>
     <div class="mets">
-      <div class="met">
-        <div class="ml">Tổng tiền đất</div>
-        <div class="mv">${fb(d.tlA)}</div>
-        <div class="ms">gốc + 10% phụ thu</div>
-      </div>
-      <div class="met">
-        <div class="ml">Tiền đất / tháng</div>
-        <div class="mv good">${fmb(d.mlA)}</div>
-        <div class="ms">trong 24 tháng</div>
-      </div>
-      <div class="met">
-        <div class="ml">Tiền xây / tháng</div>
-        <div class="mv">${fmb(d.mbuild)}</div>
-        <div class="ms">${d.bm} tháng từ T25</div>
-      </div>
-      <div class="met">
-        <div class="ml">Cao điểm / tháng</div>
-        <div class="mv">${fmb(d.peakA)}</div>
-        <div class="ms">không trả 2 khoản cùng lúc</div>
-      </div>
+      <div class="met"><div class="ml">Tổng tiền đất</div><div class="mv">${fb(d.tlA)}</div><div class="ms">gốc + 10%</div></div>
+      <div class="met"><div class="ml">Tiền đất / tháng</div><div class="mv good">${fmb(d.mlA)}</div><div class="ms">trong 24 tháng</div></div>
+      <div class="met"><div class="ml">Tiền xây / tháng</div><div class="mv">${fmb(d.mb)}</div><div class="ms">${d.bm} tháng từ T25</div></div>
+      <div class="met"><div class="ml">Cao điểm / tháng</div><div class="mv">${fmb(d.peakA)}</div><div class="ms">không trả 2 khoản cùng lúc</div></div>
     </div>
-    <div class="diff-note">Trả xong tiền đất tại T24 — trước khi bắt đầu tiền xây và trước khi nhận nhà (T30)</div>
-    <div class="ptotal"><span class="tl">Tổng thanh toán (đất + xây)</span><span class="tv">${fb(d.totalA)}</span></div>`;
+    <div class="ok-note">Trả xong đất tại T24 — trước khi bắt đầu tiền xây và trước khi nhận nhà (T30)</div>
+    <div class="ptotal"><span class="tl">Tổng thanh toán</span><span class="tv">${fb(d.totalA)}</span></div>`;
 
-  const ovNote = d.hasOverlap ? `
-    <div class="overlap-alert">
-      <strong>Cảnh báo dòng tiền:</strong> Từ T25 đến T${d.overlapEnd} (${d.overlapEnd-24} tháng), khách phải thanh toán đồng thời cả tiền đất và tiền xây.
-      Gánh nặng cao điểm: <strong>${fmb(d.peakB)} / tháng</strong>.
-    </div>` : '';
-
+  const ovNote=d.hasOv?`<div class="overlap-alert"><strong>Lưu ý dòng tiền:</strong> Từ T25 đến T${d.ovEnd} (${d.ovEnd-24} tháng) phải trả đồng thời tiền đất và tiền xây. Cao điểm: <strong>${fmb(d.peakB)}/tháng</strong>.</div>`:'';
   document.getElementById('card-b').innerHTML=`
     <div class="ptag">Phương án B</div>
     <div class="pname">Giãn 36 tháng</div>
-    <div class="pprem">Phụ thu +15% tiền đất &rarr; ${fb(d.pB)}</div>
+    <div class="pprem">Phụ thu +15% &rarr; ${fb(d.pB)}</div>
     <div class="mets">
-      <div class="met">
-        <div class="ml">Tổng tiền đất</div>
-        <div class="mv">${fb(d.tlB)}</div>
-        <div class="ms">gốc + 15% phụ thu</div>
-      </div>
-      <div class="met">
-        <div class="ml">Tiền đất / tháng</div>
-        <div class="mv">${fmb(d.mlB)}</div>
-        <div class="ms">trong 36 tháng</div>
-      </div>
-      <div class="met">
-        <div class="ml">Tiền xây / tháng</div>
-        <div class="mv">${fmb(d.mbuild)}</div>
-        <div class="ms">${d.bm} tháng từ T25</div>
-      </div>
-      <div class="met">
-        <div class="ml">Cao điểm / tháng</div>
-        <div class="mv warn">${fmb(d.peakB)}</div>
-        <div class="ms">giai đoạn trả đất + xây</div>
-      </div>
+      <div class="met"><div class="ml">Tổng tiền đất</div><div class="mv">${fb(d.tlB)}</div><div class="ms">gốc + 15%</div></div>
+      <div class="met"><div class="ml">Tiền đất / tháng</div><div class="mv">${fmb(d.mlB)}</div><div class="ms">trong 36 tháng</div></div>
+      <div class="met"><div class="ml">Tiền xây / tháng</div><div class="mv">${fmb(d.mb)}</div><div class="ms">${d.bm} tháng từ T25</div></div>
+      <div class="met"><div class="ml">Cao điểm / tháng</div><div class="mv warn">${fmb(d.peakB)}</div><div class="ms">giai đoạn đất + xây cùng lúc</div></div>
     </div>
     ${ovNote}
-    <div class="ptotal"><span class="tl">Tổng thanh toán (đất + xây)</span><span class="tv">${fb(d.totalB)}</span></div>`;
+    <div class="ptotal"><span class="tl">Tổng thanh toán</span><span class="tv">${fb(d.totalB)}</span></div>`;
 }
 
-// ── RENDER TIMELINE ───────────────────────────────────
-function rTimeline(p, d){
-  const W=900, PAD_L=92, PAD_R=24, PAD_T=44;
-  const RH=30, RG=7;
-  const TW=W-PAD_L-PAD_R;
-  const TOTAL=42; // months shown
+function rTimeline(p,d){
+  const W=900,PL=88,PR=20,PT=44,RH=34,RG=8;
+  const TW=W-PL-PR,TOTAL=42;
+  const px=m=>PL+(m/TOTAL)*TW;
+  const bw=m=>(m/TOTAL)*TW;
+  const rA1=PT,rA2=PT+RH+RG,divY=rA2+RH+14,rB1=divY+16,rB2=rB1+RH+RG,H=rB2+RH+30;
 
-  function px(m){ return PAD_L + (m/TOTAL)*TW; }
-  function bw(m){ return (m/TOTAL)*TW; }
-
-  // Row positions
-  const rA1=PAD_T, rA2=PAD_T+RH+RG;
-  const divY=rA2+RH+12;
-  const rB1=divY+14, rB2=rB1+RH+RG;
-  const H=rB2+RH+28;
-
-  const svgEl=document.getElementById('tl-svg');
-  svgEl.setAttribute('viewBox',`0 0 ${W} ${H}`);
-
-  const M24=px(24), M30=px(30), M36=px(36);
-  const buildEndM=Math.min(d.buildEnd, TOTAL);
-  const buildPx=px(buildEndM);
-  const buildW=buildPx-M24;
-
+  const M24=px(24),M30=px(30),M36=px(36);
+  const bEPx=Math.min(px(d.bEnd),W-PR);
+  const bW=bEPx-M24;
   let s='';
 
-  // Track backgrounds
-  function track(y){
-    return `<rect x="${PAD_L}" y="${y}" width="${TW}" height="${RH}" rx="4" fill="#f0ece4"/>`;
-  }
-  s+=track(rA1)+track(rA2)+track(rB1)+track(rB2);
+  [rA1,rA2,rB1,rB2].forEach(y=>{
+    s+=`<rect x="${PL}" y="${y}" width="${TW}" height="${RH}" rx="4" fill="#f0f4f0"/>`;
+  });
 
-  // Axis ticks + month labels
   [0,6,12,18,24,30,36,42].forEach(m=>{
-    const x=px(m);
-    const isKey=m===24||m===30||m===36;
-    const col=m===30?'#2a6040':m===24?'#185090':m===36?'#6b7c8e':'#a0aabc';
-    const fw=isKey?'600':'400';
-    s+=`<text x="${x}" y="${PAD_T-12}" text-anchor="middle" font-size="11" font-weight="${fw}" fill="${col}" font-family="inherit">T${m}</text>`;
-    s+=`<line x1="${x}" y1="${PAD_T-7}" x2="${x}" y2="${PAD_T}" stroke="${col}" stroke-width="${isKey?1.5:0.5}" opacity="0.6"/>`;
+    const x=px(m),isK=m===24||m===30||m===36;
+    const col=m===30?'#1a6040':m===24?'#1a4e8a':m===36?'#5a7a5a':'#9ab09a';
+    s+=`<text x="${x}" y="${PT-14}" text-anchor="middle" font-size="11" font-weight="${isK?600:400}" fill="${col}" font-family="inherit">T${m}</text>`;
+    s+=`<line x1="${x}" y1="${PT-8}" x2="${x}" y2="${PT}" stroke="${col}" stroke-width="${isK?1.5:0.5}" opacity="0.6"/>`;
+  });
+  [[M24,'#2a5ea8'],[M30,'#1a6040'],[M36,'#8a9a8a']].forEach(([x,c])=>{
+    s+=`<line x1="${x}" y1="${rA1-2}" x2="${x}" y2="${rB2+RH+4}" stroke="${c}" stroke-width="1" stroke-dasharray="4 3" opacity="0.4"/>`;
   });
 
-  // Milestone vertical lines (dashed)
-  [[M24,'#3070b0'],[M30,'#2a6040'],[M36,'#8a9bb0']].forEach(([x,col])=>{
-    s+=`<line x1="${x}" y1="${rA1-2}" x2="${x}" y2="${rB2+RH+4}" stroke="${col}" stroke-width="1" stroke-dasharray="4 3" opacity="0.45"/>`;
-  });
-
-  // ─ PLAN A LABEL ─
-  s+=`<text x="${PAD_L-8}" y="${rA1-7}" text-anchor="end" font-size="9" fill="#c8882a" font-weight="700" letter-spacing=".07em" font-family="inherit">PA A</text>`;
-
-  // A land bar: T0–T24
-  s+=`<rect x="${px(0)}" y="${rA1}" width="${bw(24)}" height="${RH}" rx="4" fill="#FAEEDA"/>`;
-  s+=`<rect x="${px(0)}" y="${rA1}" width="${bw(24)}" height="${RH}" rx="4" fill="none" stroke="#EF9F27" stroke-width="0.5"/>`;
-  s+=`<text x="${px(0)+bw(24)/2}" y="${rA1+RH/2+1}" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="#854F0B" font-family="inherit">Tiền đất — 24 tháng (+10%)</text>`;
-  s+=`<text x="${PAD_L-8}" y="${rA1+RH/2+1}" text-anchor="end" dominant-baseline="central" font-size="10" fill="#8a9bb0" font-family="inherit">Đất</text>`;
-
-  // A build bar: T25–buildEnd
-  if(buildW>0){
-    s+=`<rect x="${M24}" y="${rA2}" width="${buildW}" height="${RH}" rx="4" fill="#E6F1FB"/>`;
-    s+=`<rect x="${M24}" y="${rA2}" width="${buildW}" height="${RH}" rx="4" fill="none" stroke="#4A90D9" stroke-width="0.5"/>`;
-    if(buildW>70) s+=`<text x="${M24+buildW/2}" y="${rA2+RH/2+1}" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="#0C447C" font-family="inherit">Tiền xây dựng</text>`;
-    if(d.buildEnd<TOTAL) s+=`<text x="${buildPx+7}" y="${rA2+RH/2+1}" dominant-baseline="central" font-size="14" fill="#a0aabc" font-family="inherit">→</text>`;
+  // Plan A label
+  s+=`<text x="${PL-8}" y="${rA1-7}" text-anchor="end" font-size="9" fill="#3d8b3d" font-weight="700" letter-spacing=".07em" font-family="inherit">PA A</text>`;
+  // A land
+  s+=`<rect x="${px(0)}" y="${rA1}" width="${bw(24)}" height="${RH}" rx="4" fill="#d4edd4"/>`;
+  s+=`<rect x="${px(0)}" y="${rA1}" width="${bw(24)}" height="${RH}" rx="4" fill="none" stroke="#3d8b3d" stroke-width="0.5"/>`;
+  s+=`<text x="${px(0)+bw(24)/2}" y="${rA1+RH/2+1}" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="600" fill="#1a4e1a" font-family="inherit">Tiền đất — 24 tháng (+10%)</text>`;
+  s+=`<text x="${PL-8}" y="${rA1+RH/2+1}" text-anchor="end" dominant-baseline="central" font-size="10" fill="#7a9a7a" font-family="inherit">Đất</text>`;
+  // A build
+  s+=`<text x="${PL-8}" y="${rA2+RH/2+1}" text-anchor="end" dominant-baseline="central" font-size="10" fill="#7a9a7a" font-family="inherit">Xây</text>`;
+  if(bW>0){
+    s+=`<rect x="${M24}" y="${rA2}" width="${bW}" height="${RH}" rx="4" fill="#ddeeff"/>`;
+    s+=`<rect x="${M24}" y="${rA2}" width="${bW}" height="${RH}" rx="4" fill="none" stroke="#4a90d9" stroke-width="0.5"/>`;
+    if(bW>80)s+=`<text x="${M24+bW/2}" y="${rA2+RH/2+1}" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="600" fill="#0c3e7a" font-family="inherit">Tiền xây dựng</text>`;
+    if(d.bEnd<TOTAL)s+=`<text x="${bEPx+7}" y="${rA2+RH/2+1}" dominant-baseline="central" font-size="15" fill="#9ab09a" font-family="inherit">→</text>`;
   }
-  s+=`<text x="${PAD_L-8}" y="${rA2+RH/2+1}" text-anchor="end" dominant-baseline="central" font-size="10" fill="#8a9bb0" font-family="inherit">Xây</text>`;
 
-  // Divider
-  s+=`<line x1="${PAD_L}" y1="${divY}" x2="${W-PAD_R}" y2="${divY}" stroke="#e0d9cd" stroke-width="0.5"/>`;
+  s+=`<line x1="${PL}" y1="${divY}" x2="${W-PR}" y2="${divY}" stroke="#d4dbd4" stroke-width="0.5"/>`;
 
-  // ─ PLAN B LABEL ─
-  s+=`<text x="${PAD_L-8}" y="${rB1-7}" text-anchor="end" font-size="9" fill="#d04020" font-weight="700" letter-spacing=".07em" font-family="inherit">PA B</text>`;
-
-  // B land: T0–T24 (amber) + T24–T36 (coral overlap)
-  const lW24=bw(24), lW12=bw(12);
-  s+=`<rect x="${px(0)}" y="${rB1}" width="${lW24+2}" height="${RH}" rx="4" fill="#FAEEDA"/>`;
-  s+=`<rect x="${px(0)}" y="${rB1}" width="${lW24}" height="${RH}" rx="4" fill="none" stroke="#EF9F27" stroke-width="0.5"/>`;
-  if(lW24>100) s+=`<text x="${px(0)+lW24/2}" y="${rB1+RH/2+1}" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="#854F0B" font-family="inherit">Tiền đất T0–T24</text>`;
-
-  s+=`<rect x="${M24}" y="${rB1}" width="${lW12}" height="${RH}" rx="4" fill="#FAECE7"/>`;
-  s+=`<rect x="${M24}" y="${rB1}" width="${lW12}" height="${RH}" rx="4" fill="none" stroke="#E07855" stroke-width="0.5"/>`;
-  if(lW12>50) s+=`<text x="${M24+lW12/2}" y="${rB1+RH/2+1}" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="600" fill="#9A3520" font-family="inherit">Vẫn trả đất T24–T36</text>`;
-  s+=`<text x="${PAD_L-8}" y="${rB1+RH/2+1}" text-anchor="end" dominant-baseline="central" font-size="10" fill="#8a9bb0" font-family="inherit">Đất</text>`;
-
-  // B build bar: T25–buildEnd
-  if(buildW>0){
-    const ov=Math.min(buildW, lW12);
-    const ex=Math.max(0, buildW-lW12);
-    if(ov>0){
-      s+=`<rect x="${M24}" y="${rB2}" width="${ov+2}" height="${RH}" rx="4" fill="#E6F1FB"/>`;
-      s+=`<rect x="${M24}" y="${rB2}" width="${ov}" height="${RH}" rx="4" fill="none" stroke="#4A90D9" stroke-width="0.5"/>`;
-      if(ov>80) s+=`<text x="${M24+ov/2}" y="${rB2+RH/2+1}" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="#0C447C" font-family="inherit">Tiền xây dựng</text>`;
-    }
-    if(ex>0){
-      s+=`<rect x="${M36}" y="${rB2}" width="${ex}" height="${RH}" rx="4" fill="#E6F1FB"/>`;
-      s+=`<rect x="${M36}" y="${rB2}" width="${ex}" height="${RH}" rx="4" fill="none" stroke="#4A90D9" stroke-width="0.5"/>`;
-      if(ex>40) s+=`<text x="${M36+ex/2}" y="${rB2+RH/2+1}" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="#0C447C" font-family="inherit">Tiền xây dựng</text>`;
-    }
-    if(d.buildEnd<TOTAL) s+=`<text x="${buildPx+7}" y="${rB2+RH/2+1}" dominant-baseline="central" font-size="14" fill="#a0aabc" font-family="inherit">→</text>`;
+  // Plan B label
+  s+=`<text x="${PL-8}" y="${rB1-7}" text-anchor="end" font-size="9" fill="#c47a1a" font-weight="700" letter-spacing=".07em" font-family="inherit">PA B</text>`;
+  // B land: T0-T24 green
+  s+=`<rect x="${px(0)}" y="${rB1}" width="${bw(24)+2}" height="${RH}" rx="4" fill="#d4edd4"/>`;
+  s+=`<rect x="${px(0)}" y="${rB1}" width="${bw(24)}" height="${RH}" rx="4" fill="none" stroke="#3d8b3d" stroke-width="0.5"/>`;
+  if(bw(24)>100)s+=`<text x="${px(0)+bw(24)/2}" y="${rB1+RH/2+1}" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="600" fill="#1a4e1a" font-family="inherit">Tiền đất T0–T24</text>`;
+  // B land: T24-T36 amber
+  s+=`<rect x="${M24}" y="${rB1}" width="${bw(12)}" height="${RH}" rx="4" fill="#fff3d4"/>`;
+  s+=`<rect x="${M24}" y="${rB1}" width="${bw(12)}" height="${RH}" rx="4" fill="none" stroke="#d4a030" stroke-width="0.5"/>`;
+  if(bw(12)>60)s+=`<text x="${M24+bw(12)/2}" y="${rB1+RH/2+1}" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="600" fill="#7a5010" font-family="inherit">Vẫn trả đất T24–T36</text>`;
+  s+=`<text x="${PL-8}" y="${rB1+RH/2+1}" text-anchor="end" dominant-baseline="central" font-size="10" fill="#7a9a7a" font-family="inherit">Đất</text>`;
+  // B build: all blue
+  s+=`<text x="${PL-8}" y="${rB2+RH/2+1}" text-anchor="end" dominant-baseline="central" font-size="10" fill="#7a9a7a" font-family="inherit">Xây</text>`;
+  if(bW>0){
+    s+=`<rect x="${M24}" y="${rB2}" width="${bW}" height="${RH}" rx="4" fill="#ddeeff"/>`;
+    s+=`<rect x="${M24}" y="${rB2}" width="${bW}" height="${RH}" rx="4" fill="none" stroke="#4a90d9" stroke-width="0.5"/>`;
+    if(bW>80)s+=`<text x="${M24+bW/2}" y="${rB2+RH/2+1}" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="600" fill="#0c3e7a" font-family="inherit">Tiền xây dựng</text>`;
+    if(d.bEnd<TOTAL)s+=`<text x="${bEPx+7}" y="${rB2+RH/2+1}" dominant-baseline="central" font-size="15" fill="#9ab09a" font-family="inherit">→</text>`;
   }
-  s+=`<text x="${PAD_L-8}" y="${rB2+RH/2+1}" text-anchor="end" dominant-baseline="central" font-size="10" fill="#8a9bb0" font-family="inherit">Xây</text>`;
 
-  // Bottom labels
-  s+=`<text x="${M24}" y="${rB2+RH+18}" text-anchor="middle" font-size="10" fill="#185090" font-weight="600" font-family="inherit">Bắt đầu tiền xây</text>`;
-  s+=`<text x="${M30}" y="${rB2+RH+18}" text-anchor="middle" font-size="10" fill="#2a6040" font-weight="600" font-family="inherit">Bàn giao nhà</text>`;
-  s+=`<text x="${M36}" y="${rB2+RH+18}" text-anchor="middle" font-size="10" fill="#6b7c8e" font-weight="500" font-family="inherit">PA-B hết tiền đất</text>`;
+  s+=`<text x="${M24}" y="${rB2+RH+18}" text-anchor="middle" font-size="10" fill="#1a4e8a" font-weight="600" font-family="inherit">Bắt đầu tiền xây</text>`;
+  s+=`<text x="${M30}" y="${rB2+RH+18}" text-anchor="middle" font-size="10" fill="#1a6040" font-weight="600" font-family="inherit">Bàn giao nhà</text>`;
+  s+=`<text x="${M36}" y="${rB2+RH+18}" text-anchor="middle" font-size="10" fill="#5a7a5a" font-weight="500" font-family="inherit">PA-B hết tiền đất</text>`;
 
-  svgEl.innerHTML=s;
+  const svg=document.getElementById('tl-svg');
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.style.width='900px';
+  svg.setAttribute('height',String(H));
+  svg.innerHTML=s;
 }
 
-// ── RENDER TABLE ──────────────────────────────────────
-function rTable(p, d){
-  const {sA,sB,buildEnd} = d;
+function rTable(p,d){
+  const{sA,sB,bEnd}=d;
   let h=`<thead><tr>
     <th>Tháng</th><th>Sự kiện</th>
-    <th style="background:#c07818">PA-A Đất</th>
-    <th style="background:#2858a8">PA-A Xây</th>
-    <th style="background:#0e2e5a">PA-A Tổng</th>
-    <th style="background:#c04818">PA-B Đất</th>
-    <th style="background:#b03010">PA-B Xây</th>
-    <th style="background:#0e2e5a">PA-B Tổng</th>
+    <th style="background:#2a5e2a">PA-A Đất</th>
+    <th style="background:#1a3e7a">PA-A Xây</th>
+    <th style="background:#0e2214">PA-A Tổng/tháng</th>
+    <th style="background:#2a5e2a">PA-B Đất</th>
+    <th style="background:#1a3e7a">PA-B Xây</th>
+    <th style="background:#0e2214">PA-B Tổng/tháng</th>
   </tr></thead><tbody>`;
-
-  const max=Math.min(d.maxM, Math.max(36, buildEnd)+1);
+  const max=Math.min(d.maxM,Math.max(36,bEnd)+1);
   for(let i=0;i<max;i++){
-    const m=i+1;
-    const a=sA[i], b=sB[i];
-    let rc='', ev='';
-    if(m===24){rc='tr-key';ev='PA-A: hết tiền đất'}
+    const m=i+1,a=sA[i],b=sB[i];
+    let rc='',ev='';
+    if(m===24){rc='tr-key';ev='PA-A: tháng cuối tiền đất'}
     else if(m===25){rc='tr-key';ev='Bắt đầu tiền xây (cả 2 PA)'}
-    else if(m===30){rc='tr-handover';ev='🏠 Bàn giao nhà'}
-    else if(m===36){rc='tr-key';ev='PA-B: hết tiền đất'}
-    else if(m>24&&m<=Math.min(36,buildEnd)){rc='tr-overlap'}
-
-    const atc=a.build>0&&a.land>0?'both-val':'';
-    const btc=b.build>0&&b.land>0?'both-val':'';
-
+    else if(m===30){rc='tr-handover';ev='Bàn giao nhà'}
+    else if(m===36){rc='tr-key';ev='PA-B: tháng cuối tiền đất'}
+    else if(m>24&&m<=Math.min(36,bEnd)){rc='tr-overlap'}
+    const atc=a.build>0&&a.land>0?'both-v':'';
+    const btc=b.build>0&&b.land>0?'both-v':'';
     h+=`<tr class="${rc}">
       <td><strong>T${m}</strong></td>
-      <td style="font-size:11px;color:#6b7c8e;">${ev}</td>
-      <td class="${a.land>0?'land-val':'zero-val'}">${fm(a.land)}</td>
-      <td class="${a.build>0?'build-val':'zero-val'}">${fm(a.build)}</td>
+      <td style="font-size:11px;color:#6b7c6b">${ev}</td>
+      <td class="${a.land>0?'land-v':'zero-v'}">${fm(a.land)}</td>
+      <td class="${a.build>0?'build-v':'zero-v'}">${fm(a.build)}</td>
       <td class="${atc}"><strong>${fm(a.total)}</strong></td>
-      <td class="${b.land>0?'land-val':'zero-val'}">${fm(b.land)}</td>
-      <td class="${b.build>0?'build-val':'zero-val'}">${fm(b.build)}</td>
+      <td class="${b.land>0?'land-v':'zero-v'}">${fm(b.land)}</td>
+      <td class="${b.build>0?'build-v':'zero-v'}">${fm(b.build)}</td>
       <td class="${btc}"><strong>${fm(b.total)}</strong></td>
     </tr>`;
   }
-  h+='</tbody>';
-  document.getElementById('cf-table').innerHTML=h;
+  document.getElementById('cf-table').innerHTML=h+'</tbody>';
 }
 
-// ── RENDER NOTES ──────────────────────────────────────
-function rNotes(p, d){
+function rNotes(p,d){
   const items=[
-    {
-      title:'T+24: Bắt đầu tiền xây',
-      text:`Cả hai phương án đều bắt đầu thanh toán tiền xây dựng từ tháng 25. Phương án A đã hoàn tất toàn bộ tiền đất.`,
-      warn:false
-    },
-    {
-      title:'T+30: Nhận bàn giao nhà',
-      text:`Nhận bàn giao tại tháng 30 cho cả hai phương án. PA-B vẫn còn ${36-30} tháng tiền đất phải hoàn thành sau khi nhận nhà.`,
-      warn:false
-    },
-    d.hasOverlap?{
-      title:'Rủi ro PA-B: Trả 2 khoản đồng thời',
-      text:`Từ T25 đến T${d.overlapEnd} — ${d.overlapEnd-24} tháng — khách phải trả cả tiền đất lẫn tiền xây. Gánh nặng cao điểm: ${fmb(d.peakB)}/tháng. Cần đánh giá kỹ khả năng dòng tiền.`,
-      warn:true
-    }:null,
-    {
-      title:'Chi phí phụ thu thực tế',
-      text:`PA-A: phụ thu ${fb(d.pA)} (10% giá đất). PA-B: phụ thu ${fb(d.pB)} (15% giá đất).`,
-      warn:false
-    },
-    {
-      title:'Điều kiện áp dụng chung',
-      text:`Cả hai phương án: bắt đầu tiền xây sau T24 và nhận bàn giao nhà sau T30. Tỷ lệ phụ thu do chủ đầu tư Vinhomes quy định.`,
-      warn:false
-    }
+    {title:'T+24: Bắt đầu tiền xây',text:`Cả hai PA bắt đầu thanh toán tiền xây từ tháng 25. PA-A đã hoàn tất toàn bộ tiền đất.`,warn:false},
+    {title:'T+30: Nhận bàn giao nhà',text:`Bàn giao tại T30 cho cả hai PA. PA-B vẫn còn 6 tháng tiền đất phải hoàn thành sau khi nhận nhà.`,warn:false},
+    d.hasOv?{title:'Lưu ý PA-B: Trả 2 khoản cùng lúc',text:`T25–T${d.ovEnd} (${d.ovEnd-24} tháng): phải trả đồng thời tiền đất và tiền xây. Cao điểm ${fmb(d.peakB)}/tháng. Cần đánh giá kỹ dòng tiền.`,warn:true}:null,
+    {title:'Phụ thu thực tế',text:`PA-A: +${fb(d.pA)} (10% tiền đất). PA-B: +${fb(d.pB)} (15% tiền đất).`,warn:false},
   ].filter(Boolean);
-
   document.getElementById('notes').innerHTML=items.map(n=>`
     <div class="ncard ${n.warn?'warn':''}">
       <div class="ntitle">${n.title}</div>
@@ -533,17 +421,10 @@ function rNotes(p, d){
     </div>`).join('');
 }
 
-// ── MAIN ──────────────────────────────────────────────
 function go(){
-  const p=inp();
-  const d=calc(p);
-  rHeader(p);
-  rCards(p,d);
-  rTimeline(p,d);
-  rTable(p,d);
-  rNotes(p,d);
+  const p=getInp(),d=calc(p);
+  rHeader(p);rCards(p,d);rTimeline(p,d);rTable(p,d);rNotes(p,d);
 }
-
 go();
 </script>
 </body>
